@@ -5,7 +5,7 @@ services:
   controle-chaves:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: scmba@#Ch4v3
+      MYSQL_ROOT_PASSWORD: XXXXXXXXX
     ports:
       - "3306:3306"
     volumes:
