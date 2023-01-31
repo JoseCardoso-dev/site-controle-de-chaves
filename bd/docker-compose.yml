@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  controle-chaves:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: scmba@#Ch4v3
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./config/my.conf:/etc/mysql/conf.d/config-file.cnf"
+      - "./data:/var/lib/mysql:rw"
