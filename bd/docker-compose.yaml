@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  web:
+    container_name: "apache-srv"
+    image: php:8.1-rc-apache-buster
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - C:\Users\jrcar\Documents\VScode-Projetos\controle-chaves:/var/www/html
+    links:
+      - mysql
+    networks:
+      - mynetwork
+
+  mysql:
+    container_name: "mysql-srv"
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "./config/my.conf:/etc/mysql/conf.d/config-file.cnf"
+      - "./data:/var/lib/mysql:rw"
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    container_name: "phpmyadmin-srv"
+    restart: always
+    image: phpmyadmin:latest
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8080:80"
+    links:
+      - mysql
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
