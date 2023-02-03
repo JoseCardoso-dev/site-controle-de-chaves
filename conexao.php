@@ -3,7 +3,7 @@
 $usuario = 'root';
 $senha = 'root';
 $database = 'controleChavesBD';
-$host = '172.28.0.3';
+$host = '172.28.0.2';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 

@@ -1,63 +1,74 @@
-<?php
-    include('conexao.php');
-
-    if(isset($_POST['button-login'])){
-
-        if(strlen($_POST['email']) == 0){
-            echo "Preencha o seu email";
-        }else if(strlen($_POST['senha']) == 0){
-            echo "Preencha a sua senha";
-        }else{
-
-            $email = $mysqli->real_escape_string($_POST['email']);
-            $senha = $mysqli->real_escape_string($_POST['senha']);
-            
-            $sql_code = "SELECT * FROM user WHERE email = '$email' AND senha = '$senha'";
-            $sql_query = $mysqli->query($sql_code) or die("Fala na execução do código SQL: " .$mysqli->error);
-
-            $qtd_resultado = $sql_query->num_rows;
-
-            if($qtd_resultado == 1){
-
-                $usuario = $sql_query->fetch_assoc();
-
-                if(!isset($_SESSION)){
-                    session_start();
-                }
-
-                $_SESSION['matricula'] = $usuario['matricula'];
-                $_SESSION['nome'] = $usuario['nome'];
-                $_SESSION['email'] = $usuario['email'];
-                $_SESSION['senha'] = $usuario['senha'];
-
-                header("Location: page_home.php");
-
-            }else{
-                echo "Falha ao Logar! E-mail ou Senha incorretos!";
-            }
-        }
-    }
-?>
-
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <title>Login</title>
 </head>
 <body>
-    <section class="area-login">
-        <div class="login">
-            <div class="title">Entrar</div>
-            <form method="POST">
-                <input type="text" name="email" placeholder="Email" autofocus>
-                <input type="password" name="senha" placeholder="Senha">
-                <label><input type="checkbox">Lembre me</label>
-                <input type="submit" name="button-login" value="entrar">
-            </form>
-            <p>Controle de Chaves - Infra</p>
-            <div><img src="img/logo-scmba-azul.png"></div>
-        </div>
-    </section>
+    <div class="content">
+        <h1>Entrar</h1>
+        <form id="form">
+            <div>
+                <input type="email" placeholder="Digite seu email" class="inputs required" oninput="emailValidate()">
+                <span class="span-required">Digite um email válido</span>
+            </div>
+            <div>
+                <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()">
+                <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
+            </div>
+            
+            <div class="box-select">
+                <input type="checkbox" id="lembre-me" value="lembre-me">
+                <label for="lembre-me">Lembre me</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <div class="complements"><p>Controle de Chaves - Infra</p><br>
+            <img src="img/logo-scmba-branca.png"></div>
+
+        </form>
+    </div>
 </body>
+<script>
+    const form   = document.getElementById('form');
+    const campos = document.querySelectorAll('.required');
+    const spans  = document.querySelectorAll('.span-required');
+    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        emailValidate();
+        mainPasswordValidate();
+    });
+
+    function setError(index){
+        campos[index].style.border = '2px solid #e63636';
+        spans[index].style.display = 'block';
+    }
+
+    function removeError(index){
+        campos[index].style.border = '';
+        spans[index].style.display = 'none';
+    }
+
+    function emailValidate(){
+        if(!emailRegex.test(campos[0].value)){
+            setError(0);
+        }
+        else{
+            removeError(0);
+            <?php $emailValidacao = true;?>
+        }
+    }
+
+    function mainPasswordValidate(){
+        if(campos[1].value.length < 8){
+            setError(1);
+        }
+        else{
+            removeError(1);
+        }
+    }
+</script>
 </html>
