@@ -1,6 +1,6 @@
 <?php
 
-    include('validate-session.php');
+    include('validations/validate-session.php');
 
 ?>
 

@@ -9,7 +9,7 @@ form.addEventListener('submit', (event) => {
     passwordValidate();
     if((campos[0].style.border == '') && (campos[1].style.border == '')){
         $.ajax({
-            url: "validate-credentials.php",
+            url: "validations/validate-credentials.php",
             type: "post",
             data: {
                 email: campos[0].value,

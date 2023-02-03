@@ -1,6 +1,6 @@
 <?php
 
-    include('conexao-mysql.php');
+    include('../conexao-mysql.php');
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
