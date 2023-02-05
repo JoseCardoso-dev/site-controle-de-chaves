@@ -140,54 +140,107 @@ button{
 
 
 
+
+
+
 .colum2-lim1{
     display: flex;
     justify-content: space-evenly;
 }
 
 
- .input{
+.input{
     position: relative;
     width: 100%;
     margin-left: 0.2rem;
     margin-right: 0.2rem;
- }
-
- .input input{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 8px;
     border: 1px solid #5d5d5d;
     background: var(--color-dark1);
     border-radius: 5px;
+}
+
+.input input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 9px;
+    border: none;
+    background: none;
     outline: none;
     color: var(--color-white);
     font-size: 1rem;
- }
+}
 
- .input span{
+.input span{
     position: absolute;
     left: 0;
-    padding: 8px;
+    padding-top: 12px;
+    padding-left: 5px;
     pointer-events: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #5d5d5d;
     text-transform: uppercase;
     transition: 0.5s;
- }
+}
 
- .input input:valid ~ span,
- .input input:focus ~ span{
+.input input:valid ~ span,
+.input input:focus ~ span{
     color: #e6e6e6;
     border-radius: 3px;
     transform: translateX(10px) translateY(-8px);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 1px 8px;
     background: var(--color-purple1);
     letter-spacing: 0.1rem;
- }
+}
 
- .input input:valid,
- .input input:focus{
+.input input:valid,
+.input input:focus{
     border: 2px solid var(--color-purple1);
- }
+}
+
+.date{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    color: #e6e6e6;
+    border: 1px solid #5d5d5d;
+    border-radius: 5px;
+    background: var(--color-dark1);
+    padding: 4px 4px 4px 4px;
+    display: none;
+}
+
+form [type="datetime-local"]{
+    
+    background: var(--color-dark1);
+    color: #e6e6e6;
+    height: 1rem;
+    border: none;
+    outline: none;
+}
+
+p{
+    font-size: 0.8rem;
+    width: 80;
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+
+/* form [type="datetime-local"]{
+    display: block;
+    color: #fff;
+    background-color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 50%;
+    padding-left: 0%;
+    margin-left: 25%;
+    margin-right: 25%;
+    cursor: pointer;
+}*/

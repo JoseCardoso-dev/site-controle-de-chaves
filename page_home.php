@@ -1,7 +1,7 @@
 <?php
 
     include("validations/validate-session.php");
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -51,26 +51,44 @@
                         <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()">
                         <span class="span-required">....</span>
                     </div>
-                    <div class="colum2-lim1">
-                        <div class="input">
-                            <input type="text" required="required">
-                            <span>Número da Chaves</span>
-                        </div> 
-                        <div class="input">
-                            <input type="text" required="required">
-                            <span>Número da Chaves</span>
-                        </div>
-                        <div class="input">
-                            <input type="text" required="required">
-                            <span>Número da Chaves</span>
-                        </div>
-                    </div>
-                    
+
 
                     <div>
-                        <label for="date">Data e Hora:</label>
-                        <input id="date" type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
-                    </div>  
+                        <div>
+                        <form>
+                            <input type="radio" name="consulta" checked value="1">Colaborador
+                            <input type="radio" name="consulta" value="2">Prestador
+                            <input type="radio" name="consulta" value="3">Outros
+                        </form>
+                        </div>
+                        <div id="colaborador">
+                            <div class="colum2-lim1">
+                                <div class="input">
+                                    <input type="text" required="required">
+                                    <span>Número da Chave</span>
+                                </div> 
+                                <div class="input">
+                                    <input type="text" required="required">
+                                    <span>Matrícula do Comodatário</span>
+                                </div>
+                                <div class="date">
+                                    <p for="date">Data / Hora:</p>
+                                    <input id="date" type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
+                                </div>  
+                            </div>
+                        </div>
+                        <div id="prestador" hidden>
+                            DIV 2
+                        </div>
+                        <div id="outros" hidden>
+                            DIV 3
+                        </div>
+                    </div>
+
+                    
+                    
+
+                    
 
                     <textarea class="inputs" name="descricao" id="descricao" cols="25" rows="10" placeholder="Fale um pouco sobre você..."></textarea>
             
@@ -82,6 +100,7 @@
             <img class="img-home" src="img/logo-scmba-branca.png"></div>
         </div>
     </div>
-
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scrip-consulta.js"></script>
 </html>
