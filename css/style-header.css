@@ -1,6 +1,7 @@
 :root{
     --color-white: #e6e6e6;
     --color-dark1: #181818;
+    --color-blue: #004160;
 }
 
 
@@ -18,6 +19,7 @@ a {
 
 a:hover {
   background: rgb(66, 65, 65);
+  border-radius: 15px;
 }
 
 .sair:hover {
@@ -26,21 +28,25 @@ a:hover {
 
 #header {
   box-sizing: border-box;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   height: 70px;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #944141;
+  background: var(--color-blue);
 }
 
 #header img{
     width: 70px;
 }
 
-header h1{
+header h2{
     font-size: 1.2rem;
-    font-weight: bold;
+   
     padding-left: 4rem;
     color: var(--color-white);
     width: 100%;
@@ -50,6 +56,7 @@ header h1{
   display: flex;
   list-style: none;
   gap: 0.5rem;
+  
 }
 
 #menu a {
@@ -61,7 +68,7 @@ header h1{
   display: none;
 }
 
-@media (max-width: 615px) {
+@media (max-width: 668px) {
   #menu {
     display: block;
     position: absolute;
