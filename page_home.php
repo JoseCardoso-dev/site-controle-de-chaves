@@ -36,79 +36,62 @@
           <h1>Registrar Emprestimo de Chave 🔑</h1>
           <form>
             <div class="box-select">
-              <input type="radio" name="consulta" checked value="1">
+              <input class="required" type="radio" name="consulta" checked value="1">
               <label for="">Colaborador</label>
-              <input type="radio" name="consulta" value="2">
-              <label for="">Prestador</label>
-              <input type="radio" name="consulta" value="3">
-              <label for="">Outros</label>
+              <input class="required" type="radio" name="consulta" value="2">
+              <label for="">Terceiro</label>
             </div>
+            
             <div id="colaborador">
               <div class="inputs">
                 <div class="input">
-                  <input type="text" required>
+                  <input class="required" type="text" required>
                   <span>N° Chave</span>
                 </div> 
                 <div class="input">
-                  <input type="text" required>
+                  <input class="required" type="text" required>
                   <span>Matrícula</span>
                 </div>
                 <div class="input">
-                  <input id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
+                  <input class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
                   <span>Data / Hora</span>
                 </div>
               </div>
             </div>
-            <div id="prestador" hidden>
-              <div class="inputs">
-                <div class="input">
-                  <input type="text" required>
-                  <span>N° Chave</span>
-                </div> 
-                <div class="input">
-                  <input type="text" required>
-                  <span>Matrícula</span>
-                </div>
-                <div class="input">
-                  <input id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
-                  <span>Data / Hora</span>
-                </div>
-              </div>
-            </div>
-            <div id="outros" hidden>
+            <div id="terceiro" hidden>
               <div class="invet-diretion">
                 <div class="inputs">
                   <div class="input">
-                    <input type="text" required>
+                    <input class="required" type="text" required>
                     <span>Nome</span>
                   </div> 
 
                   <div class="input">
-                    <input type="text" required>
+                    <input class="required" type="text" required>
                     <span>Empresa</span>
                   </div> 
                 </div>
 
                 <div class="inputs">
                   <div class="input">
-                    <input type="text" required>
+                    <input class="required" type="text" required>
                     <span>Colaborador Responsável</span>
                   </div>
 
                   <div class="input input-mat-outros">
-                    <input type="text" required>
+                    <input class="required" type="text" required>
                     <span>Matrícula</span>
                   </div> 
                 </div>
 
                 <div class="inputs last-inputs-outros">
                   <div class="input">
-                    <input type="text" required>
+                    <input class="required" type="text" required>
                     <span>N° Chave</span>
                   </div> 
 
                   <div class="input">
-                    <input id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
+                    <input class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
                     <span>Data / Hora</span>
                   </div>
                 </div>
@@ -132,5 +115,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="scrip-consulta.js"></script>
-<script src="./script.js"></script>
+<script src="script-menu.js"></script>
 </html>

@@ -2,8 +2,8 @@
 
 $usuario = 'root';
 $senha = 'root';
-$database = 'controleChavesBD';
-$host = '172.28.0.4';
+$database = 'controleChavesDB';
+$host = '172.19.0.4';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 
