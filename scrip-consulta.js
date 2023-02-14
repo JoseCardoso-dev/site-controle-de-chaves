@@ -2,6 +2,11 @@ const inputs = document.querySelectorAll('.required');
 inputs[2].required = true;
 inputs[3].required = true;
 
+inputs[5].required = false;
+inputs[6].required = false;
+inputs[7].required = false;
+inputs[8].required = false;
+inputs[9].required = false;
 $('input:radio[name="consulta"]').change(function() {
     if ($(this).val() == 1) {
       $("#colaborador").attr("hidden", false);

@@ -34,14 +34,14 @@
   <article>
       <div class="content">
           <h1>Registrar Emprestimo de Chave 🔑</h1>
-          <form>
+          <form method="POST" id="form">
             <div class="box-select">
               <input class="required" type="radio" name="consulta" checked value="1">
               <label for="">Colaborador</label>
               <input class="required" type="radio" name="consulta" value="2">
               <label for="">Terceiro</label>
             </div>
-            
+
             <div id="colaborador">
               <div class="inputs">
                 <div class="input">
@@ -107,7 +107,7 @@
                 <textarea required cols="25" rows="5"></textarea>
             </div>
 
-            <button class="button" type="submit">Enviar</button>
+            <button class="button" name="submit" type="submit">Enviar</button>
           </form>
       </div> 
   </article>
@@ -116,4 +116,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="scrip-consulta.js"></script>
 <script src="script-menu.js"></script>
+<script src="save-data-db.js"></script>
 </html>
