@@ -5,7 +5,7 @@
     }
 
     if(!isset($_SESSION['matricula'])){
-        header("Location: index.php");
+        header("Location: ../index.php");
         die("Erro: realize o login da página!");
     }
 ?>

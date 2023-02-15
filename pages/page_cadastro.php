@@ -1,6 +1,6 @@
 <?php
 
-  include('./validations/validate-session.php');
+  include('../validations/validate-session.php');
 
 ?>
 
@@ -9,22 +9,22 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Página de cadastro </title>
-  <link rel="stylesheet" href="./css/style-header.css">
-  <link rel="stylesheet" href="./css/style-article.css">
+  <title>Cadastro </title>
+  <link rel="stylesheet" href="../css/style-header.css">
+  <link rel="stylesheet" href="../css/style-article.css">
 </head>
 
 <body>
   <header id="header">
-    <img class="img-home" src="img/logo-scmba-branca.png">
+    <img class="img-home" src="../img/logo-scmba-branca.png">
     <h2>Olá, <?php echo $_SESSION['nome']; ?></h2>
     <nav id="nav">
       <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
         <span id="hamburger"></span>
       </button>
       <ul id="menu" role="menu">
-        <li><a href="/">Cadastro</a></li>
-        <li><a href="/">Histórico</a></li>
+        <li><a href="./page_cadastro.php">Cadastro</a></li>
+        <li><a href="./page_historic.php">Histórico</a></li>
         <li><a href="/">Chaves</a></li>
         <li><a class="sair" href="./logout.php">Sair</a></li>
       </ul>
@@ -114,7 +114,7 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="scrip-consulta.js"></script>
-<script src="script-menu.js"></script>
-<script src="save-data-db.js"></script>
+<script src="../scripts/scrip-consulta.js"></script>
+<script src="../scripts/script-menu.js"></script>
+<script src="../write-read-db/save-data-db.js"></script>
 </html>

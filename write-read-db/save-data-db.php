@@ -1,6 +1,6 @@
 <?php
 
-    include('./conexao-mysql.php');
+    include('../conexao-mysql.php');
 
     $tipo = $_POST['tipo'];
     $nChave = $_POST['nChave'];

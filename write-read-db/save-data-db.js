@@ -2,6 +2,7 @@
   const form   = document.getElementById('form');
   
   form.addEventListener('submit', (event) => {
+        event.preventDefault();
         const campos = document.querySelectorAll('.required');
 
         var tipo;
@@ -14,7 +15,7 @@
         var T_matriRespon;
 
         if (inputs[0].checked == true) {
-            tipo = "Colaborador";
+            tipo = "Colaborador (C)";
             nChave = inputs[2].value;
             C_matricula = inputs[3].value;
             dataTime = inputs[4].value;
@@ -24,7 +25,7 @@
             T_colabRespon = "-----";
             T_matriRespon = "-----";
         }else{
-            tipo = "Terceiro";
+            tipo = "Terceiro (T)";
             nChave = inputs[9].value;
             dataTime = inputs[10].value;
 
@@ -36,7 +37,7 @@
         }
 
         $.ajax({
-            url: "./save-data-db.php",
+            url: "../write-read-db/save-data-db.php",
             type: "post",
             data: {
                 tipo: tipo,
@@ -51,7 +52,7 @@
             success: function(result){
                 if(result == 'Registro realizado com sucesso!'){
                     alert(result);
-                    window.location.href = 'page_home.php';
+                    window.location.href = '../pages/page_cadastro.php';
                 }else{
                     alert(result);
                 }

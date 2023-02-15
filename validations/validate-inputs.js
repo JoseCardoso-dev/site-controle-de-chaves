@@ -17,7 +17,7 @@ form.addEventListener('submit', (event) => {
             },
             success: function(result){
                 if(result == 'validado'){
-                    window.location.href = 'page_home.php';
+                    window.location.href = '../pages/page_cadastro.php';
                 }else{
                     alert(result);
                 }
