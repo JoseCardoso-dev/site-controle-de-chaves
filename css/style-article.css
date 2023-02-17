@@ -103,7 +103,7 @@ article h1{
 
 .input input:focus ~ span{
     transform: translateX(10px) translateY(-8px);
-    
+
     padding: 1px 8px;
     letter-spacing: 0.04rem;
 }

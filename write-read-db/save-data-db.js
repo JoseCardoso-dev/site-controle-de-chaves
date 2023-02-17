@@ -13,6 +13,7 @@
         var T_empresa;
         var T_colabRespon
         var T_matriRespon;
+        var situacao = "Pendente";
 
         if (inputs[0].checked == true) {
             tipo = "Colaborador (C)";
@@ -47,7 +48,8 @@
                 T_nome: T_nome,
                 T_empresa: T_empresa,
                 T_colabRespon: T_colabRespon,
-                T_matriRespon: T_matriRespon
+                T_matriRespon: T_matriRespon,
+                situacao: situacao
             },
             success: function(result){
                 if(result == 'Registro realizado com sucesso!'){
