@@ -91,64 +91,71 @@
         </div>
 
         <dialog>
-               
+        
             <h1>Detallhes do Emprestimo da Chave 🔑</h1>
-
             <div id="colaborador-popup">
                 <div class="inputs">
                     <div class="input">
                         <input disabled class="required" type="text" required>
-                        <span>N° Chave</span>
-                    </div> 
-                    <div class="input">
-                        <input disabled class="required" type="text" required>
-                        <span>Matrícula</span>
+                        <span>Nome</span>
                     </div>
-                    <div class="input">
-                        <input disabled class="required" id="date" required type="datetime-local">
-                        <span>Data / Hora</span>
+                    <div class="invet-diretion">
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>N° Chave</span>
+                        </div> 
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>Matrícula</span>
+                        </div>
+                        <div class="input">
+                            <input disabled class="required" id="date" required type="datetime-local">
+                            <span>Data / Hora</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div id="terceiro-popup" hidden>
-                <div class="invet-diretion">
-                    <div class="inputs">
-                    <div class="input">
-                        <input class="required" type="text" required>
-                        <span>Nome</span>
-                    </div> 
-
-                    <div class="input">
-                        <input class="required" type="text" required>
-                        <span>Empresa</span>
-                    </div> 
+                <div class="inputs">
+                    <div class="invet-diretion">
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>Nome</span>
+                        </div> 
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>Empresa</span>
+                        </div> 
                     </div>
+                </div>
 
-                    <div class="inputs">
-                    <div class="input">
-                        <input class="required" type="text" required>
-                        <span>Colaborador Responsável</span>
+                <div class="inputs">
+                    <div class="invet-diretion">
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>Colaborador Responsável</span>
+                        </div>
+
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>Matrícula</span>
+                        </div> 
                     </div>
+                </div>
 
-                    <div class="input input-mat-outros">
-                        <input class="required" type="text" required>
-                        <span>Matrícula</span>
-                    </div> 
+                <div class="inputs">
+                    <div class="invet-diretion">
+                        <div class="input">
+                            <input disabled class="required" type="text" required>
+                            <span>N° Chave</span>
+                        </div> 
+
+                        <div class="input">
+                            <input disabled class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
+                            <span>Data / Hora</span>
+                        </div>
                     </div>
-
-                    <div class="inputs last-inputs-outros">
-                    <div class="input">
-                        <input class="required" type="text" required>
-                        <span>N° Chave</span>
-                    </div> 
-
-                    <div class="input">
-                        <input class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
-                        <span>Data / Hora</span>
-                    </div>
-                    </div>
-
                 </div>
             </div>
             
@@ -157,10 +164,10 @@
             </div>
             
             <div class="textarea">
-                <textarea required cols="25" rows="5"></textarea>
+                <textarea disabled cols="25" rows="5"></textarea>
             </div>
 
-            <button onclick="closePopup()" >Voltar</button>
+            <button class="button" onclick="closePopup()" >Voltar</button>
             
         </dialog>
 

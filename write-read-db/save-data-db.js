@@ -4,7 +4,7 @@
   form.addEventListener('submit', (event) => {
         event.preventDefault();
         const campos = document.querySelectorAll('.required');
-        alert("oii");
+        
         var tipo;
         var nChave;
         var dataTime;

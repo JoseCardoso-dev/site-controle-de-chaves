@@ -11,10 +11,19 @@ dialog{
     text-align: center;
     color: var(--color-white);
     gap: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-dialog .inputs{
-    
+dialog .input{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    border: 1px solid var(--color-gray);
+    background: var(--color-dark1);
+    border-radius: 5px;
+    margin-top: 1.2rem;
 }
 
 dialog .input{
@@ -57,4 +66,85 @@ dialog .inputs span{
     border-radius: 3px;
     padding: 2px 8px;
     letter-spacing: 0.04rem;
+}
+
+dialog .invet-diretion{
+    display: flex;
+    flex-direction: row;
+
+}
+
+dialog .title-textarea p{
+    margin-left: 16px;
+    width: 145px;
+    padding-top: 12px;
+    padding-left: 5px;
+    pointer-events: none;
+    font-size: 0.8rem;
+    color:  var(--color-white);
+    text-transform: uppercase;
+    transition: 0.5s;
+    transform: translateY(-9px);
+    background: var(--color-gray);
+    padding: 1px 8px;
+    font-size: 0.68rem;
+    border-radius: 3px;
+    padding: 2px 8px;
+    letter-spacing: 0.04rem;
+}
+
+dialog .title-textarea{
+    height: 0;
+    margin-top: 1.3rem;
+}
+
+dialog textarea{
+    padding: 8px 5px;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--color-dark1);
+    border: 1px solid var(--color-gray);
+    color: var(--color-white);
+    width: 100%;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+dialog [type="datetime-local"]{
+    background: none;
+    color: var(--color-white);
+    height: 1rem;
+    border: none;
+    outline: none;
+    height: 100%;
+    text-align: center;
+    color-scheme: dark;
+    font-size: 110%;
+}
+
+dialog button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    width: 64%;
+    margin-left: 18%;
+    margin-right: 18%;
+    text-transform: uppercase;
+}
+
+dialog .button{
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    background-color: var(--color-red2);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: .3s;
+    width: 50%;
+}
+
+dialog .button:hover{
+    background-color: rgb(209, 83, 83);
 }
