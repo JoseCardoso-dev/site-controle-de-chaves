@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style-historic.css">
     <link rel="stylesheet" href="../css/style-header.css">
+    <link rel="stylesheet" href="../css/style-popup.css">
     <link rel="stylesheet" href="../css/colors.css">
     <title>Histórico</title>
 </head>
@@ -42,7 +43,7 @@
                         <th scope="col">Nº Chave</th>
                         <th scope="col">Retirada</th>
                         <th scope="col">C_Matrícula</th>
-                        <th scope="col">T_Nome</th>
+                        <th scope="col">Nome</th>
                         <th scope="col">T_Empresa</th>
                         <th scope="col">T_Colaborador</br>Responsável</th>
                         <th scope="col">T_Matrícula</br>Responsável</th>
@@ -54,7 +55,8 @@
                 <tbody>
                     <?php
                         while($historic_data = mysqli_fetch_assoc($result)){
-                            echo "<tr>";
+
+                            echo "<tr id='lin{$historic_data['id']}'>";
                                 echo "<td>".$historic_data['tipo']."</td>";
                                 echo "<td>".$historic_data['nChave']."</td>";
                                 echo "<td>".date("d/m/Y H:i", strtotime($historic_data['dataTime']))."</td>";
@@ -64,7 +66,6 @@
                                 echo "<td>".$historic_data['T_colabRespon']."</td>";
                                 echo "<td>".$historic_data['T_matriRespon']."</td>";
                                 
-                    
                                 if($historic_data['situacao'] == "Pendente"){
                                     echo "<td><div class='acao'>
                                     <a href='../write-read-db/update-resister-db.php?id=$historic_data[id]'>Devolver</a>
@@ -74,7 +75,7 @@
                                 }
 
                                 echo "<td style='padding: 0px;'><div class='button-detalhes'>
-                                        <a onclick='openPopup()'>
+                                        <a onclick='openPopup($historic_data[id])' >
                                         <img src='../img/icon-eye.png' alt='Mais Detalhes'>
                                         </a></div></td>";
 
@@ -90,88 +91,81 @@
         </div>
 
         <dialog>
-            <div class="content">
-                <h1>Detalhes do Registro🔑</h1>
-                <form method="POST" id="form">
-                    <div class="box-select">
-                    <input class="required" type="radio" name="consulta" checked value="1">
-                    <label for="">Colaborador</label>
-                    <input class="required" type="radio" name="consulta" value="2">
-                    <label for="">Terceiro</label>
+               
+            <h1>Detallhes do Emprestimo da Chave 🔑</h1>
+
+            <div id="colaborador-popup">
+                <div class="inputs">
+                    <div class="input">
+                        <input disabled class="required" type="text" required>
+                        <span>N° Chave</span>
+                    </div> 
+                    <div class="input">
+                        <input disabled class="required" type="text" required>
+                        <span>Matrícula</span>
+                    </div>
+                    <div class="input">
+                        <input disabled class="required" id="date" required type="datetime-local">
+                        <span>Data / Hora</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="terceiro-popup" hidden>
+                <div class="invet-diretion">
+                    <div class="inputs">
+                    <div class="input">
+                        <input class="required" type="text" required>
+                        <span>Nome</span>
+                    </div> 
+
+                    <div class="input">
+                        <input class="required" type="text" required>
+                        <span>Empresa</span>
+                    </div> 
                     </div>
 
-                    <div id="colaborador">
                     <div class="inputs">
-                        <div class="input">
+                    <div class="input">
                         <input class="required" type="text" required>
-                        <span>N° Chave</span>
-                        </div> 
-                        <div class="input">
+                        <span>Colaborador Responsável</span>
+                    </div>
+
+                    <div class="input input-mat-outros">
                         <input class="required" type="text" required>
                         <span>Matrícula</span>
-                        </div>
-                        <div class="input">
+                    </div> 
+                    </div>
+
+                    <div class="inputs last-inputs-outros">
+                    <div class="input">
+                        <input class="required" type="text" required>
+                        <span>N° Chave</span>
+                    </div> 
+
+                    <div class="input">
                         <input class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
                         <span>Data / Hora</span>
-                        </div>
                     </div>
                     </div>
-                    <div id="terceiro" hidden>
-                    <div class="invet-diretion">
-                        <div class="inputs">
-                        <div class="input">
-                            <input class="required" type="text" required>
-                            <span>Nome</span>
-                        </div> 
 
-                        <div class="input">
-                            <input class="required" type="text" required>
-                            <span>Empresa</span>
-                        </div> 
-                        </div>
+                </div>
+            </div>
+            
+            <div class="title-textarea">
+                <p>Motivo / Observação</p>
+            </div>
+            
+            <div class="textarea">
+                <textarea required cols="25" rows="5"></textarea>
+            </div>
 
-                        <div class="inputs">
-                        <div class="input">
-                            <input class="required" type="text" required>
-                            <span>Colaborador Responsável</span>
-                        </div>
-
-                        <div class="input input-mat-outros">
-                            <input class="required" type="text" required>
-                            <span>Matrícula</span>
-                        </div> 
-                        </div>
-
-                        <div class="inputs last-inputs-outros">
-                        <div class="input">
-                            <input class="required" type="text" required>
-                            <span>N° Chave</span>
-                        </div> 
-
-                        <div class="input">
-                            <input class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
-                            <span>Data / Hora</span>
-                        </div>
-                        </div>
-
-                    </div>
-                    </div>
-                    
-                    <div class="title-textarea">
-                    <p>Motivo / Observação</p>
-                    </div>
-                    
-                    <div class="textarea">
-                        <textarea required cols="25" rows="5"></textarea>
-                    </div>
-
-                    <button id='butthon-close-popup' class="button" name="submit" type="submit">Voltar</button>
-                </form>
-            </div> 
+            <button onclick="closePopup()" >Voltar</button>
+            
         </dialog>
 
     </article>
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="../scripts/script-popup.js"></script>
 </html>
