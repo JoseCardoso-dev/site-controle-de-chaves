@@ -1,13 +1,3 @@
-:root{
-    --color-white: #fff;
-    --color-red: #e63636;
-    --color-dark1: #181818;
-    --color-dark2: #1e1e1e;
-    --color-purple1: #9333FF;
-    --color-purple2: indigo;
-    --color-blue: #004160;
-}
-
 body{
     background-color: var(--color-dark1);
 }
@@ -45,37 +35,30 @@ table{
 
 
 th:nth-child(1){
-    background-color: #ca5d04;
     width: 13%;
 }
 
 th:nth-child(2){
-    background-color: #004160;
     width: 7%;
 }
 
 th:nth-child(3){
-    background-color: #004160;
     width: 11%;
 }
 
 th:nth-child(4){
-    background-color: #82a0ad;
     width: 8.3%;
 }
 
 th:nth-child(5){
-    background-color: #82a0ad;
     width: 8.7%;
 }
 
 th:nth-child(9){
-    background-color: #000507;
     width: 11%;
 }
 
 th:nth-child(10){
-    background-color: #000507;
     width: 6%;
 }
 
@@ -87,8 +70,7 @@ th:nth-child(10){
 }
 
 th{
-    background-color: var(--color-dark2);
-    
+    background-color: var(--color-blue2);
 }
 
 th:nth-child(1){
@@ -100,10 +82,8 @@ th:nth-last-child(1){
 }
 
 tr:nth-of-type(odd) {
-    background-color: #393b3b;
+    background-color: var(--color-gray2);
 }
-
-
 
 .acao{
     margin-top: 8px;
@@ -119,17 +99,17 @@ tr:nth-of-type(odd) {
 .acao a{
     cursor: pointer;
     transition: .3s;
-    padding: 7px;
+    padding: 8px;
     margin: 5px;
-    background-color: rgb(5, 145, 5);
+    background-color: var(--color-green);
     text-decoration: none;
     font-family: sans-serif;
-    border-radius: 13px;   
+    border-radius: 12px;   
 }
 
 .acao a:hover{
-    background-color: rgb(40, 136, 40);
-    letter-spacing: 0.04rem;
+    background-color: var(--color-green2);
+    border-radius: 17px; 
 }
 
 .button-delete a{
@@ -145,15 +125,24 @@ tr:nth-of-type(odd) {
     background-color: transparent;
 }
 
+.button-delete img{
+    transform: translateY(4px);
+}
 
+.button-detalhes a{
+    cursor: pointer;
+    transition: .3s;
+    padding: 5px;
+    margin: 5px;
+    background-color: none;
+    text-decoration: none;
+}
 
+.button-detalhes a:hover{
+    background-color: transparent;
+}
 
-
-
-
-
-
-
-
-
-
+.button-detalhes img{
+    transform: translateY(4px);
+    width: 33px;
+}

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style-login.css">
+    <link rel="stylesheet" href="./css/style-login.css">
+    <link rel="stylesheet" href="./css/colors.css">
     <title>Login</title>
 </head>
 <body>

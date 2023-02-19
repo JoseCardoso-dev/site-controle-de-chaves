@@ -12,6 +12,7 @@
   <title>Cadastro </title>
   <link rel="stylesheet" href="../css/style-header.css">
   <link rel="stylesheet" href="../css/style-article.css">
+  <link rel="stylesheet" href="../css/colors.css">
 </head>
 
 <body>
@@ -23,10 +24,10 @@
         <span id="hamburger"></span>
       </button>
       <ul id="menu" role="menu">
-        <li><a href="./page_cadastro.php">Cadastro</a></li>
-        <li><a href="./page_historic.php">Histórico</a></li>
-        <li><a href="/">Chaves</a></li>
-        <li><a class="sair" href="./logout.php">Sair</a></li>
+        <li><a href="./page_cadastro.php"><h1 class="sublinhado">Cadastro</h1></a></li>
+        <li><a href="./page_historic.php"><h1 class="sublinhado">Histórico</h1></a></li>
+        <li><a href="/"><h1 class="sublinhado">Chaves</h1></a></li>
+        <li><a class="sair" href="../pages/page_logout.php"><h1 class="sublinhado-sair">Sair</h1></a></li>
       </ul>
     </nav>
   </header>
