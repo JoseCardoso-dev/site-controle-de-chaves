@@ -44,12 +44,12 @@ a:hover {
 }
 
 #header img{
-    width: 70px;
+    width: 74px;
 }
 
 header h2{
     font-size: 1.2rem;
-    padding-left: 4rem;
+    padding-left: 2.5rem;
     color: var(--color-white);
     width: 100%;
     
@@ -89,7 +89,7 @@ header h2{
   display: none;
 }
 
-@media (max-width: 668px) {
+@media (max-width: 703px) {
   #menu {
     display: block;
     position: absolute;

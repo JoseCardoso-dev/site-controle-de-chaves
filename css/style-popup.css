@@ -98,6 +98,14 @@ dialog .title-textarea{
     margin-top: 1.3rem;
 }
 
+dialog .mat-ter-popup{
+    width: 40%;
+}
+
+dialog .ncha-ter-popup{
+    width: 20%;
+}
+
 dialog textarea{
     padding: 8px 5px;
     outline: none;
@@ -113,10 +121,9 @@ dialog textarea{
 dialog [type="datetime-local"]{
     background: none;
     color: var(--color-white);
-    height: 1rem;
+    height: 2.26rem;
     border: none;
     outline: none;
-    height: 100%;
     text-align: center;
     color-scheme: dark;
     font-size: 110%;

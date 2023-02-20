@@ -115,7 +115,7 @@
             </div>
             
             <div class="textarea">
-                <textarea required cols="25" rows="5"></textarea>
+                <textarea class="motivo" required cols="25" rows="5"></textarea>
             </div>
 
             <button class="button" name="submit" type="submit">Enviar</button>

@@ -47,12 +47,14 @@
                         <th scope="col">T_Empresa</th>
                         <th scope="col">T_Colaborador</br>Responsável</th>
                         <th scope="col">T_Matrícula</br>Responsável</th>
+                        <th scope="col">cadastrante</th>
+                        <th scope="col">motivo</th>
                         <th scope="col">Devolução</th>
                         <th scope="col">Mais</br>Detalhes</th>
                         <th scope="col">Excluir</th>  
                     </tr> 
                 </thead>
-                <tbody>
+                <tbody> 
                     <?php
                         while($historic_data = mysqli_fetch_assoc($result)){
 
@@ -65,7 +67,9 @@
                                 echo "<td>".$historic_data['T_empresa']."</td>";
                                 echo "<td>".$historic_data['T_colabRespon']."</td>";
                                 echo "<td>".$historic_data['T_matriRespon']."</td>";
-                                
+                                echo "<td>".$historic_data['cadastrante']."</td>";
+                                echo "<td>".$historic_data['motivo']."</td>";
+
                                 if($historic_data['situacao'] == "Pendente"){
                                     echo "<td><div class='acao'>
                                     <a href='../write-read-db/update-resister-db.php?id=$historic_data[id]'>Devolver</a>
@@ -96,22 +100,22 @@
             <div id="colaborador-popup">
                 <div class="inputs">
                     <div class="input">
-                        <input disabled class="required" type="text" required>
+                        <input disabled class="required inputpopup" type="text" required>
                         <span>Nome</span>
                     </div>
                     <div class="invet-diretion">
                         <div class="input">
-                            <input disabled class="required" type="text" required>
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>N° Chave</span>
                         </div> 
                         <div class="input">
-                            <input disabled class="required" type="text" required>
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>Matrícula</span>
                         </div>
-                        <div class="input">
-                            <input disabled class="required" id="date" required type="datetime-local">
-                            <span>Data / Hora</span>
-                        </div>
+                    </div>
+                    <div class="input">
+                        <input disabled class="required inputpopup" type="text" required>
+                        <span>Cadastrante</span>
                     </div>
                 </div>
             </div>
@@ -120,11 +124,11 @@
                 <div class="inputs">
                     <div class="invet-diretion">
                         <div class="input">
-                            <input disabled class="required" type="text" required>
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>Nome</span>
                         </div> 
                         <div class="input">
-                            <input disabled class="required" type="text" required>
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>Empresa</span>
                         </div> 
                     </div>
@@ -133,12 +137,12 @@
                 <div class="inputs">
                     <div class="invet-diretion">
                         <div class="input">
-                            <input disabled class="required" type="text" required>
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>Colaborador Responsável</span>
                         </div>
 
-                        <div class="input">
-                            <input disabled class="required" type="text" required>
+                        <div class="input mat-ter-popup">
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>Matrícula</span>
                         </div> 
                     </div>
@@ -146,16 +150,16 @@
 
                 <div class="inputs">
                     <div class="invet-diretion">
-                        <div class="input">
-                            <input disabled class="required" type="text" required>
+                        <div class="input ncha-ter-popup">
+                            <input disabled class="required inputpopup" type="text" required>
                             <span>N° Chave</span>
                         </div> 
-
                         <div class="input">
-                            <input disabled class="required" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
-                            <span>Data / Hora</span>
+                            <input disabled class="required inputpopup" type="text" required>
+                            <span>Cadastrante</span>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             
@@ -164,7 +168,7 @@
             </div>
             
             <div class="textarea">
-                <textarea disabled cols="25" rows="5"></textarea>
+                <textarea class="inputpopup" disabled cols="25" rows="5"></textarea>
             </div>
 
             <button class="button" onclick="closePopup()" >Voltar</button>
@@ -173,6 +177,7 @@
 
     </article>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="../scripts/script-popup.js"></script>
 </html>

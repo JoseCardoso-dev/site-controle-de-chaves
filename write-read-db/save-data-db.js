@@ -4,7 +4,8 @@
   form.addEventListener('submit', (event) => {
         event.preventDefault();
         const campos = document.querySelectorAll('.required');
-        
+        const textarea = document.querySelectorAll('.motivo');
+
         var tipo;
         var nChave;
         var dataTime;
@@ -14,6 +15,7 @@
         var T_colabRespon
         var T_matriRespon;
         var situacao = "Pendente";
+        var motivo = textarea[0].value;
 
         if (inputs[0].checked == true) {
             tipo = "Colaborador (C)";
@@ -49,7 +51,8 @@
                 T_empresa: T_empresa,
                 T_colabRespon: T_colabRespon,
                 T_matriRespon: T_matriRespon,
-                situacao: situacao
+                situacao: situacao,
+                motivo: motivo
             },
             success: function(result){
                 if(result == 'Registro realizado com sucesso!'){
