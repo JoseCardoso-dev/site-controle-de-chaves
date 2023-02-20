@@ -15,7 +15,6 @@
     $cadastranteNome = $_SESSION['nome'];
     $cadastranteMatricula = $_SESSION['matricula'];
     $cadastrante = "$cadastranteNome ($cadastranteMatricula)";
-    $cadastrante = $_SESSION['nome']." (".$_SESSION['matricula'].")";
     $motivo = $_POST['motivo'];
 
     $sql_code = "INSERT INTO registers(tipo, nChave, dataTime, C_matricula, T_nome, 

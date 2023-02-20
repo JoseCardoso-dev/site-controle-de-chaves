@@ -27,8 +27,8 @@
         <ul id="menu" role="menu">
             <li><a href="./page_cadastro.php"><h1 class="sublinhado">Cadastro</h1></a></li>
             <li><a href="./page_historic.php"><h1 class="sublinhado">Histórico</h1></a></li>
-            <li><a href="/"><h1 class="sublinhado">Chaves</h1></a></li>
-            <li><a class="sair" href="../pages/page_logout.php"><h1 class="sublinhado-sair">Sair</h1></a></li>
+            <li><a href="./page_chaves.php"><h1 class="sublinhado">Chaves</h1></a></li>
+            <li><a class="sair" href="./page_logout.php"><h1 class="sublinhado-sair">Sair</h1></a></li>
         </ul>
         </nav>
     </header>
