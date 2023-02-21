@@ -1,6 +1,7 @@
 const form   = document.getElementById('form');
 const campos = document.querySelectorAll('.required');
 const spans  = document.querySelectorAll('.span-required');
+const checkbox   = document.getElementById('checkbox');
 const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
 form.addEventListener('submit', (event) => {
@@ -17,6 +18,11 @@ form.addEventListener('submit', (event) => {
             },
             success: function(result){
                 if(result == 'validado'){
+                    
+                    if(checkbox.checked == true){
+                        setCookie();
+                    }
+
                     window.location.href = '../pages/page_cadastro.php';
                 }else{
                     alert(result);
