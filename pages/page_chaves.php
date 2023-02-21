@@ -96,4 +96,5 @@
         </div>
 
 </body>
+<script src="../scripts/script-menu.js"></script>
 </html>

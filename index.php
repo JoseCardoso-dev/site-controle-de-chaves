@@ -25,8 +25,9 @@
             </div>
 
             <button type="submit" name="button-login">Enviar</button>
-            <div class="complements"><p>Controle de Chaves - Infra</p><br>
-            <img src="img/logo-scmba-branca.png"></div>
+            <div class="complements"><p>Controle de Chaves - Infra</p></br>
+                <img src="img/logo-scmba-branca.png">
+            </div>
 
         </form>
     </div>
