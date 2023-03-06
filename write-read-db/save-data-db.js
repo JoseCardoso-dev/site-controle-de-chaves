@@ -26,13 +26,13 @@
 
             T_empresa = "-----";
             T_colabRespon = "-----";
-            T_matriRespon = "-----";
+            T_matriRespon = 00000;
         }else{
             tipo = "Terceiro (T)";
             nChave = inputs[10].value;
             dataTime = inputs[11].value;
 
-            C_matricula = "-----";
+            C_matricula = 00000;
             nome = inputs[6].value;
             T_empresa = inputs[7].value;
             T_colabRespon = inputs[8].value;

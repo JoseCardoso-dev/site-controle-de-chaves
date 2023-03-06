@@ -3,8 +3,8 @@ function setCookie(){
     var email = document.getElementById('email').value;
     var password = document.getElementById('senha').value;
     
-    document.cookie = "myemail="+email+";path=htt://localhost/";
-    document.cookie = "mypassword="+password+";path=htt://localhost/";
+    document.cookie = "myemail="+email+";path=htt://10.50.10.27/";
+    document.cookie = "mypassword="+password+";path=htt://10.50.10.27/";
 }
 
 function getCookieData(){
