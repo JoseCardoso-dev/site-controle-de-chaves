@@ -3,7 +3,7 @@
 $usuario = 'root';
 $senha = 'root';
 $database = 'controleChavesDB';
-$host = '172.28.0.2';
+$host = '172.18.0.3';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 mysqli_set_charset($mysqli, "utf8");

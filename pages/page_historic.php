@@ -73,7 +73,7 @@
                                 if($historic_data['situacao'] == "Pendente"){
                                     echo "<td><div class='acao'>
                                     <a href='../write-read-db/update-resister-db.php?id=$historic_data[id]'>Devolver</a>
-                                    </div>";
+                                    </div></td>";
                                 } else{
                                     echo "<td>".date("d/m/Y H:i", strtotime($historic_data['dateTimeDevolucao']))."</td>";
                                 }

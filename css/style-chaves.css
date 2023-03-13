@@ -81,3 +81,28 @@ th:nth-child(5){
     width: 10%;
     border-top-right-radius: 6px;
 }
+
+.pegar{
+    margin-top: 3px;
+}
+
+.acao{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.acao a{
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+    padding: 6px;
+    background-color: var(--color-green);
+    text-decoration: none;
+    font-family: sans-serif;
+    border-radius: 12px;   
+}
+
+.acao a:hover{
+    background-color: var(--color-green2);
+    border-radius: 17px; 
+}

@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="../css/style-header.css">
     <link rel="stylesheet" href="../css/style-chaves.css">
     <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/style-popup.css">
     <title>Chaves</title>
 </head>
 <body>
     <header id="header">
         <img class="img-home" src="../img/logo-scmba-branca.png">
-        <h2>Olá, <?php echo $_SESSION['nome']; ?></h2>
+        <h2>Olá, <?php $nome = $_SESSION['nome']; echo $nome; ?></h2>
         <nav id="nav">
         <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
             <span id="hamburger"></span>
@@ -41,19 +42,33 @@
                                 <th scope="col">Número</th>
                                 <th scope="col">Local</th>
                                 <th scope="col">Copia Reserva</th>
-                                <th scope="col">Armário</th>
-                                <th scope="col">Cor</th>
+                                <th scope="col">Ação</th>
+                                <th scope="col">Status</th>
                             </tr> 
                         </thead>
                         <tbody> 
                             <?php
+                                $matricula = $_SESSION['matricula'];
+                                
                                 while($historic_data = mysqli_fetch_assoc($result)){
+                                    $nChave = $historic_data['numero'];
+
                                     echo "<tr>";
                                         echo "<td>".$historic_data['numero']."</td>";
                                         echo "<td>".$historic_data['local']."</td>";
                                         echo "<td>".$historic_data['copiaReserva']."</td>";
-                                        echo "<td>".$historic_data['armario']."</td>";
-                                        echo "<td>".$historic_data['cor']."</td>";
+                                        
+                                        if($historic_data['situacao'] == 'livre'){
+                                            echo "<td><div class='acao'>
+                                            <a onclick='openPopup($nChave)'>
+                                            Pegar</a></div></td>";
+
+                                            echo "<td>🟢</td>";
+                                        } else{
+                                            echo "<td> </td>";
+
+                                            echo "<td>🔴</td>";
+                                        }
                                     echo "</tr>";
                                     if($historic_data['numero'] == 25){
                                         break;
@@ -71,8 +86,8 @@
                                 <th scope="col">Número</th>
                                 <th scope="col">Local</th>
                                 <th scope="col">Copia Reserva</th>
-                                <th scope="col">Armário</th>
-                                <th scope="col">Cor</th>
+                                <th scope="col">Ação</th>
+                                <th scope="col">Status</th>
                             </tr> 
                         </thead>
                         <tbody> 
@@ -83,8 +98,18 @@
                                             echo "<td>".$historic_data['numero']."</td>";
                                             echo "<td>".$historic_data['local']."</td>";
                                             echo "<td>".$historic_data['copiaReserva']."</td>";
-                                            echo "<td>".$historic_data['armario']."</td>";
-                                            echo "<td>".$historic_data['cor']."</td>";
+                                            
+                                            if($historic_data['situacao'] == 'livre'){
+                                                echo "<td><div class='acao'>
+                                                <a onclick='openPopup($nChave)'>
+                                                Pegar</a></div></td>";
+
+                                                echo "<td>🟢</td>";
+                                            } else{
+                                                echo "<td> </td>";
+
+                                                echo "<td>🔴</td>";
+                                            }
                                         echo "</tr>";
                                     }
                                 }
@@ -94,7 +119,45 @@
                 </div>
             </div>
         </div>
+        <dialog>
+        
+            <h1>Registrar Emprestimo de Chave 🔑</h1>
+            <form action="" id="form">
+                <div class="inputs">
+                    <div class="input">
+                        <input disabled class="required inputpopup" type="text" value="<?php echo $nome ?>" required>
+                        <span>Nome</span>
+                    </div>
+                    <div class="invet-diretion">
+                        <div class="input">
+                            <input disabled class="required inputpopup" type="text" required>
+                            <span>N° Chave</span>
+                        </div> 
+                        <div class="input">
+                            <input disabled class="required inputpopup" type="text" value="<?php echo $matricula ?>"  required>
+                            <span>Matrícula</span>
+                        </div>
+                        <div class="input">
+                            <input class="required inputpopup" id="date" required type="datetime-local" value="<?php date_default_timezone_set("America/Recife"); echo date("Y-m-d H:i");?>">
+                            <span>Data / Hora</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="title-textarea">
+                    <p>Motivo / Observação</p>
+                </div>
+                
+                <div class="textarea">
+                    <textarea required class="inputpopup" cols="25" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="button" onclick="closePopup()" >Voltar</button>
+            </form>
+        </dialog>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="../scripts/script-menu.js"></script>
+<script src="../scripts/scrip-popup-chaves.js"></script>
 </html>
