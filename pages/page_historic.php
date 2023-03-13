@@ -25,8 +25,13 @@
             <span id="hamburger"></span>
         </button>
         <ul id="menu" role="menu">
+            <?php
+            if($_SESSION['adm'] != 0 || $_SESSION['adm-setor'] != 0){
+                echo "<li><a href='./page_users.php'><h1 class='sublinhado'>Usuário</h1></a></li>";
+            }
+            ?>
             <li><a href="./page_cadastro.php"><h1 class="sublinhado">Cadastro</h1></a></li>
-            <li><a href="./page_historic.php"><h1 class="sublinhado">Histórico</h1></a></li>
+            <li><a style="background: rgb(66, 65, 65); border-radius: 15px;" href="./page_historic.php"><h1 class="sublinhado">Histórico</h1></a></li>
             <li><a href="./page_chaves.php"><h1 class="sublinhado">Chaves</h1></a></li>
             <li><a class="sair" href="./page_logout.php"><h1 class="sublinhado-sair">Sair</h1></a></li>
         </ul>

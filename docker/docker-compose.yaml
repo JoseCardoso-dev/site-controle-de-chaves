@@ -9,7 +9,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /home/jose/Documentos/VScode-Projetos/controle-chaves:/var/www/html
+      - C:\Users\c92120\Documents\VScode-Projetos\site-controle-de-chaves:/var/www/html
     links:
       - mysql
     networks:
@@ -17,7 +17,7 @@ services:
 
   mysql:
     container_name: "mysql-srv"
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     ports:
       - 3306:3306
@@ -25,8 +25,7 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - "/home/jose/Documentos/VScode-Projetos/controle-chaves/db/config/my.conf:/etc/mysql/conf.d/config-file.cnf"
-      - "/home/jose/Documentos/VScode-Projetos/controle-chaves/db/data:/var/lib/mysql:rw"
+      - C:\Users\c92120\Documents\VScode-Projetos\site-controle-de-chaves\db\data:/var/lib/mysql:rw
     networks:
       - mynetwork
 
@@ -38,9 +37,9 @@ services:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
       - PMA_USER=root
-      - PMA_PASSWORD=root     
+      - PMA_PASSWORD=root
     ports:
-      - 8080:80
+      - "8080:80"
     links:
       - mysql
     networks:

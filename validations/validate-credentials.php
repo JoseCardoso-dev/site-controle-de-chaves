@@ -25,6 +25,8 @@
             $_SESSION['matricula'] = $usuario['matricula'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['email'] = $usuario['email'];
+            $_SESSION['adm'] = $usuario['adm'];
+            $_SESSION['adm-setor'] = $usuario['adm-setor'];
 
             echo 'validado';
         }else{

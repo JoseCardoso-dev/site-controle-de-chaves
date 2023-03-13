@@ -41,6 +41,7 @@ table{
     margin-top: 1.5rem;
     width: 50%;
 }
+
 .invet-diretion{
     display: flex;
     flex-direction: row;
@@ -58,6 +59,10 @@ table{
 
 th{
     background-color: var(--color-blue2);
+}
+
+tr{
+    height: 38px;
 }
 
 tr:nth-of-type(odd) {

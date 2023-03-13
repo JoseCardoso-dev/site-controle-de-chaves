@@ -17,12 +17,26 @@
     $cadastrante = "$cadastranteNome ($cadastranteMatricula)";
     $motivo = $_POST['motivo'];
 
-    $sql_code = "INSERT INTO registers(tipo, nChave, dataTime, C_matricula, T_nome, 
-    T_empresa, T_colabRespon, T_matriRespon, situacao, cadastrante, motivo) VALUES ('$tipo', '$nChave', '$dataTime', '$C_matricula', 
-    '$T_nome', '$T_empresa', '$T_colabRespon', '$T_matriRespon', '$situacao', '$cadastrante', '$motivo')";
+    $sql_code = "SELECT situacao FROM chaves WHERE numero = '$nChave'";
+    $consulta = $mysqli->query($sql_code) or die("Fala na execução do código SQL");
 
-    $sql_query = $mysqli->query($sql_code) or die("Fala na execução do código SQL");
+    $dado = mysqli_fetch_object($consulta);
+    $status = $dado->situacao;
 
-    echo 'Registro realizado com sucesso!';
+    if($status == 'livre'){
+        $sql_code = "UPDATE chaves SET situacao = 'ocupada' WHERE numero = '$nChave'";
+    
+        $sql_query = $mysqli->query($sql_code) or die("Fala na execução do código SQL");
+
+        $sql_code = "INSERT INTO registers(tipo, nChave, dataTime, C_matricula, T_nome, 
+        T_empresa, T_colabRespon, T_matriRespon, situacao, cadastrante, motivo) VALUES ('$tipo', '$nChave', '$dataTime', '$C_matricula', 
+        '$T_nome', '$T_empresa', '$T_colabRespon', '$T_matriRespon', '$situacao', '$cadastrante', '$motivo')";
+
+        $sql_query = $mysqli->query($sql_code) or die("Fala na execução do código SQL");
+
+        echo 'Registro realizado com sucesso!';
+    } else{
+        echo 'Chaves já em uso!';
+    }
 
 ?>
